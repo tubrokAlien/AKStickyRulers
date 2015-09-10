@@ -24,7 +24,9 @@ class AKStickyBlinkView: UIView {
     func blink(completion: (finished: Bool) -> Void) {
         alpha = 0.0
         UIView.animateWithDuration(0.25, animations: { [weak self] () -> Void in
-            self?.alpha = 1.0
+            if let itm = self {
+                itm.alpha = 1.0
+            }
         }, completion: completion)
     }
     
