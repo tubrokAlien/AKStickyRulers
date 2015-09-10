@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StickyRulers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoQ-km-One">
+                                <rect key="frame" x="16" y="20" width="75" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="cAa-9A-UAC"/>
+                                    <constraint firstAttribute="height" constant="30" id="rpJ-pT-sG1"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="adG-gY-Ufz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhn-dc-vWD">
+                                <rect key="frame" x="509" y="20" width="75" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="A5f-c3-uXD"/>
+                                    <constraint firstAttribute="height" constant="30" id="pay-aC-qah"/>
+                                </constraints>
+                                <state key="normal" title="Load">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k1m-0T-ee5"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olY-c5-h3F">
+                                <rect key="frame" x="535" y="549" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="FVx-Iu-itx"/>
+                                    <constraint firstAttribute="width" constant="49" id="cmf-9q-Rfk"/>
+                                </constraints>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap create vertical ruler" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCN-NJ-H1O">
+                                <rect key="frame" x="369" y="539" width="142" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="142" id="2oD-EJ-8Xo"/>
+                                    <constraint firstAttribute="height" constant="51" id="oO6-dS-ohO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="uhn-dc-vWD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4QI-s2-Deq"/>
+                            <constraint firstItem="JCN-NJ-H1O" firstAttribute="centerY" secondItem="olY-c5-h3F" secondAttribute="centerY" id="9tG-sR-NMe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="olY-c5-h3F" secondAttribute="bottom" constant="20" id="La1-NV-uoj"/>
+                            <constraint firstItem="uhn-dc-vWD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="MvE-bk-sxZ"/>
+                            <constraint firstItem="CoQ-km-One" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="R2X-Vb-veT"/>
+                            <constraint firstItem="CoQ-km-One" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="c1k-iH-QCT"/>
+                            <constraint firstItem="olY-c5-h3F" firstAttribute="leading" secondItem="JCN-NJ-H1O" secondAttribute="trailing" constant="24" id="kLi-qA-9fU"/>
+                            <constraint firstItem="olY-c5-h3F" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="oGR-6D-2fp"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="mgJ-Us-Fej" appends="YES" id="ZDH-l7-dmN"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="verticalRulerSwitcher" destination="olY-c5-h3F" id="riV-yo-1Q8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="mgJ-Us-Fej">
+                    <connections>
+                        <action selector="doubleTapAction:" destination="BYZ-38-t0r" id="ing-cT-vPE"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+</document>
