@@ -1,2 +1,2 @@
 # AKStickyRulers
-Sticky rulers like in Photoshop
+Sticky rulers for iOS / OSX like in Photoshop
