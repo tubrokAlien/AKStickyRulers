@@ -33,7 +33,7 @@ class AKStickyRuler: NSObject, AKStickyProvider {
         aCoder.encodeInteger(stickyZone, forKey: kStickyZone)
         aCoder.encodeInteger(location, forKey: kLocation)
     }
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         _stickyZone = aDecoder.decodeIntegerForKey(kStickyZone)
         location = aDecoder.decodeIntegerForKey(kLocation)
     }

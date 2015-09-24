@@ -59,7 +59,7 @@ class AKStickyObject: NSObject, AKStickyProvider {
         aCoder.encodeObject(object, forKey: kStickySupportingObject)
         aCoder.encodeObject(providerManager, forKey: kProviderManager)
     }
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         if let obj = aDecoder.decodeObjectForKey(kStickySupportingObject) as? AKStickySupporting {
             object = obj
         }

@@ -15,7 +15,7 @@ let kStaticRulerViews = "staticRulerViews"
 extension Array {
     mutating func removeObject<U: Equatable>(object: U) {
         var index: Int?
-        for (idx, objectToCompare) in enumerate(self) {
+        for (idx, objectToCompare) in self.enumerate() {
             if let to = objectToCompare as? U {
                 if object == to {
                     index = idx
@@ -65,11 +65,11 @@ class ViewController: UIViewController {
     
     private func documentsDirectory() -> String? {
         let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        return paths.count > 0 ? paths.first as? String : nil
+        return paths.count > 0 ? paths.first! : nil
     }
     private func testDataFilePath() -> String? {
         if let path = documentsDirectory() {
-            return path.stringByAppendingPathComponent("testData.srdata")
+            return (path as NSString).stringByAppendingPathComponent("testData.srdata")
         }
         return nil
     }
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
         else {
             ruler = AKStickyHorizontalRuler(location: Int(point.y))
         }
-        var blinkView = AKStickyBlinkView(provider: ruler)
+        let blinkView = AKStickyBlinkView(provider: ruler)
         view.addSubview(blinkView)
         staticRulerViews.append(blinkView)
         
@@ -159,16 +159,16 @@ class ViewController: UIViewController {
 
     //MARK: - Touches -
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch = touches.first! as! UITouch
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first! 
         let pt = touch.locationInView(view)
         if CGRectContainsPoint(self.moveView.frame, pt) {
             sp.x = pt.x - moveView.frame.origin.x
             sp.y = pt.y - moveView.frame.origin.y
         }
     }
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch = touches.first! as! UITouch
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first! 
         let pt = touch.locationInView(view)
         if CGRectContainsPoint(self.moveView.frame, pt) {
             var fr = self.moveView.frame

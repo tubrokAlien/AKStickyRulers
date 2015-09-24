@@ -55,7 +55,7 @@ class AKStickyProviderManager: NSObject, AKStickyProvider {
         }
         aCoder.encodeObject(list, forKey: kStickyProviderList)
     }
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         if let list = aDecoder.decodeObjectForKey(kStickyProviderList) as? [AnyObject] {
             for itm in list {
                 if let provider = itm as? AKStickyProvider {
